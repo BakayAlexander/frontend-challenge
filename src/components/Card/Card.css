@@ -33,12 +33,16 @@
 }
 
 .card__like-button:hover {
-	/* opacity: 1; */
 	background: url(../../images/like-button-active.svg) no-repeat center;
 }
 
 .card__like-button_active {
 	display: block;
+}
+
+.card__like-button_liked-active {
+	display: block;
+	background: url(../../images/like-button-active.svg) no-repeat center;
 }
 
 @media (max-width: 768px) {
