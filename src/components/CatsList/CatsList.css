@@ -10,6 +10,31 @@
 	grid-gap: 48px;
 }
 
+.cats-list__container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cats-list_add-button {
+	margin: 50px 0;
+	width: 300px;
+	height: 36px;
+	background-color: transparent;
+	color: #000;
+	border: 2px solid #2196f3;
+	border-radius: 10px;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 14px;
+	cursor: pointer;
+	transition: 0.1s ease-in;
+}
+
+.cats-list_add-button:hover {
+	opacity: 0.8;
+}
+
 @media (max-width: 768px) {
 	.cats-list {
 		grid-template-columns: repeat(auto-fit, 300px);

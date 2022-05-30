@@ -40,9 +40,23 @@
 	display: block;
 }
 
-.card__like-button_liked-active {
-	display: block;
+.card__like-button_liked {
+	display: none;
 	background: url(../../images/like-button-active.svg) no-repeat center;
+	width: 40px;
+	height: 37px;
+	cursor: pointer;
+	background-color: transparent;
+	background-size: contain;
+	border: none;
+	transition: background-image 0.2s ease-in;
+	position: absolute;
+	bottom: 24px;
+	right: 24px;
+}
+
+.card__like-button_liked_active {
+	display: block;
 }
 
 @media (max-width: 768px) {

@@ -9,14 +9,19 @@ import CatsLikedList from '../CatsLikedList/CatsLikedList';
 function App() {
 	const [cards, setCards] = useState([]);
 	const [likedCards, setLikedCards] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 	let storageCards = JSON.parse(localStorage.getItem('liked-cards'));
 
 	useEffect(() => {
-		getCats(10).then((res) => setCards(res));
-	}, []);
-
-	useEffect(() => {
-		setLikedCards(storageCards);
+		if (storageCards) {
+			setLikedCards(storageCards);
+		}
+		setIsLoading(true);
+		getCats(50)
+			.then((res) => setCards(res))
+			.finally(() => {
+				setIsLoading(false);
+			});
 	}, []);
 
 	const onLikeCard = (id, url) => {
@@ -41,7 +46,13 @@ function App() {
 					exact
 					path='/'
 					element={
-						<CatsList cards={cards} likedCards={likedCards} onLikeCard={onLikeCard} onDislikeCard={onDislikeCard} />
+						<CatsList
+							cards={cards}
+							likedCards={likedCards}
+							onLikeCard={onLikeCard}
+							onDislikeCard={onDislikeCard}
+							isLoading={isLoading}
+						/>
 					}
 				/>
 				<Route
