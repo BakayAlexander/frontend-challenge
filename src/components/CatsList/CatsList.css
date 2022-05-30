@@ -1,0 +1,17 @@
+.cats-list {
+	list-style: none;
+	max-width: 1440px;
+	margin: 52px auto;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 225px);
+	justify-content: center;
+	align-items: center;
+	grid-gap: 48px;
+}
+
+@media (max-width: 768px) {
+	.cats-list {
+		grid-template-columns: repeat(auto-fit, 300px);
+	}
+}
