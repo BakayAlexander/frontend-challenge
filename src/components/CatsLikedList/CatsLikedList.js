@@ -23,7 +23,7 @@ function CatsLikedList({ cards, onLikeCard, onDislikeCard }) {
 				<div className='cats-liked-list__empty-container'>
 					<h2 className='cats-liked-list__empty-title'>Все котики разбежались =(</h2>
 					<Link to='/' className='cats-liked-list__link'>
-						Скорее, давайте найдем их
+						Скорее, давайте найдем их!
 					</Link>
 				</div>
 			)}
